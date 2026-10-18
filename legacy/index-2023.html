@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maionalho: Sabor e Frescor em Cada Pitada!</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin:0; padding:0; box-sizing:border-box;}
+        header {background-image: url('https://th.bing.com/th/id/OIG.NuDeNedCGrEQiSbqTbrD?pid=ImgGn'); height: 100vh; background-size: cover; background-position: center;}
+        h1 {color: #333; text-align:center; padding-top:40%;}
+        section {padding: 50px 0; text-align:center;}
+        h2, p {color: #333;}
+        footer {background-color:#f8f8f8; padding: 20px 0; text-align:center;}
+        img {max-width: 100%; height: auto;}
+
+        /* Regras CSS para telas menores (mobile) */
+        @media (max-width: 600px) {
+            header {height: 50vh;}
+            h1 {padding-top:30%;}
+            section {padding: 25px 0;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="welcome">Bem-vindo ao site oficial do Maionalho!</h1>
+    </header>
+
+    <section id="sobre-nos">
+        <h2>Sobre nós</h2>
+        <p>Bem-vindo ao saboroso mundo do Maionalho, a única maionese de alho registrada no Brasil! Nossa maionese é feita com ingredientes frescos e naturais, proporcionando um sabor único que vai transformar suas refeições. Experimente o Maionalho e descubra o segredo do nosso sucesso.</p>
+        <img src="https://th.bing.com/th/id/OIG.YsqDUUf34DxYjvQA0r7Q?pid=ImgGn" alt="Sobre nós">
+    </section>
+
+    <section id="produtos">
+        <h2>Produtos</h2>
+        <p>O Maionalho está disponível em potes de 200g, 400g e 800g. Nossa maionese é feita com alho fresco, ovos caipiras e óleo de soja de alta qualidade. Cada porção de Maionalho contém apenas 90 calorias, tornando-a uma opção saudável para suas refeições. Use o Maionalho em sanduíches, saladas, carnes grelhadas e muito mais!</p>
+        <img src="https://th.bing.com/th/id/OIG.DD14RX_XJA8F93WFHm.e?pid=ImgGn" alt="Produtos">
+    </section>
+
+    <section id="receitas">
+        <h2>Receitas</h2>
+        <p>Nossa seção de receitas apresenta uma variedade de pratos deliciosos que você pode preparar com o Maionalho. De sanduíches gourmet a pratos principais sofisticados, há algo para todos os gostos. Além disso, convidamos nossos clientes a enviar suas próprias receitas usando o Maionalho para serem apresentadas em nosso site.</p>
+        <img src="https://th.bing.com/th/id/OIG.Wa8AmHuuK_IJE3IAe_47?pid=ImgGn" alt="Receitas">
+    </section>
+
+    <section id="onde-comprar">
+        <h2>Onde comprar</h2>
+        <p>O Maionalho está disponível em supermercados selecionados em todo o Brasil e também pode ser comprado online através de nosso site oficial e parceiros de varejo online. Visite nossa seção “Onde comprar” para encontrar o varejista mais próximo de você.</p>
+        <img src="https://th.bing.com/th/id/OIG.3hMtP8I1E0oz0NFOYv5B?pid=ImgGn&w=1024&h=1024&rs=1" alt="Onde comprar">
+    </section>
+
+    <footer>
+        <h3>Contato</h3>
+        <p>Temos uma equipe dedicada pronta para responder a todas as suas perguntas sobre o Maionalho. Se você é um cliente procurando mais informações sobre nossos produtos, um jornalista interessado em nossa história ou um varejista querendo estocar o Maionalho, entre em contato conosco através do formulário em nosso site ou pelo telefone (55) 3333-3333</p>
+    </footer>
+
+<script>
+window.onload = function() {
+  document.getElementById("welcome").innerHTML = "Bem-vindo ao mundo do Maionalho!";
+};
+
+// Adicionando um pouco de interatividade com JavaScript
+document.getElementById("welcome").addEventListener("mouseover", function() {
+  this.style.color = "#FF6347"; // Altera a cor do texto quando o mouse passa sobre ele
+});
+
+document.getElementById("welcome").addEventListener("mouseout", function() {
+  this.style.color = "#333"; // Retorna a cor original quando o mouse sai
+});
+</script>
+
+</body>
+</html>
