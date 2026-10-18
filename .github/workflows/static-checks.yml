@@ -1,0 +1,32 @@
+name: Maionalho 2.0 / Static checks
+on:
+  push:
+    branches: [main, maionalho-2-0]
+  workflow_dispatch:
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check HTML, interactions and JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, subprocess
+          page = Path("index.html").read_text(encoding="utf-8")
+          assert page.lower().startswith("<!doctype html>")
+          assert "<html lang=\"pt-BR\">" in page
+          assert "</html>" in page
+          scripts = re.findall(r"<script\b[^>]*>([\s\S]*?)</script>", page, re.I)
+          assert len(scripts) == 2, f"Expected 2 inline scripts, found {len(scripts)}"
+          Path("/tmp/maionalho-interactions.js").write_text(scripts[0],encoding="utf-8")
+          Path("/tmp/maionalho-webgl.mjs").write_text(scripts[1],encoding="utf-8")
+          for file in ["/tmp/maionalho-interactions.js","/tmp/maionalho-webgl.mjs"]:
+              subprocess.run(["node","--check",file],check=True)
+          for required in ["product-canvas","garlic-range","chaos-range","flavor-card","chaos-button","manifesto","rituais","maionalhoSetFlavor"]:
+              assert required in page, "Missing interaction: "+required
+          print("✅ HTML structure, JavaScript syntax and interaction hooks verified")
+          PY
